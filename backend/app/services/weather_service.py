@@ -61,7 +61,8 @@ async def fetch_rainfall(lat: float, lng: float) -> dict:
     request_time = datetime.now(timezone.utc)
 
     try:
-        async with httpx.AsyncClient(timeout=15.0) as client:
+        headers = {"User-Agent": "LandslideGuard-Demo/1.0 (Contact: demo@landslideguard.in)"}
+        async with httpx.AsyncClient(timeout=15.0, headers=headers) as client:
             resp = await client.get(url, params=params)
             resp.raise_for_status()
             data = resp.json()
