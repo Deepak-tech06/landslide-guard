@@ -75,7 +75,8 @@ async def fetch_rainfall(lat: float, lng: float) -> dict:
             if cache_key in _WEATHER_CACHE:
                 cached_data, _ = _WEATHER_CACHE[cache_key]
                 res = cached_data.copy()
-                res["status"] = "ERROR (Using stale cache)"
+                res["status"] = "CACHED"
+                res["error"] = "Empty response"
                 return res
             return _error_result(lat, lng, request_time, "Empty response from Open-Meteo")
 
@@ -121,7 +122,8 @@ async def fetch_rainfall(lat: float, lng: float) -> dict:
         if cache_key in _WEATHER_CACHE:
             cached_data, _ = _WEATHER_CACHE[cache_key]
             res = cached_data.copy()
-            res["status"] = "ERROR (Using stale cache)"
+            res["status"] = "CACHED"
+            res["error"] = "API timeout"
             return res
         return _error_result(lat, lng, request_time, "API timeout")
     except httpx.HTTPStatusError as e:
@@ -130,7 +132,8 @@ async def fetch_rainfall(lat: float, lng: float) -> dict:
         if cache_key in _WEATHER_CACHE:
             cached_data, _ = _WEATHER_CACHE[cache_key]
             res = cached_data.copy()
-            res["status"] = status_text
+            res["status"] = "CACHED"
+            res["error"] = status_text
             return res
         return _error_result(lat, lng, request_time, status_text)
     except Exception as e:
@@ -138,7 +141,8 @@ async def fetch_rainfall(lat: float, lng: float) -> dict:
         if cache_key in _WEATHER_CACHE:
             cached_data, _ = _WEATHER_CACHE[cache_key]
             res = cached_data.copy()
-            res["status"] = "ERROR (Using stale cache)"
+            res["status"] = "CACHED"
+            res["error"] = str(e)
             return res
         return _error_result(lat, lng, request_time, str(e))
 
