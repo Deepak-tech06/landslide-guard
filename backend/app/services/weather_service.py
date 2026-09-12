@@ -19,9 +19,28 @@ HOURLY_PARAMS = "precipitation"
 
 
 import time
+import json
+import os
 
+CACHE_FILE = os.path.join(os.path.dirname(__file__), "weather_cache.json")
 _WEATHER_CACHE = {}
 CACHE_TTL = 300  # 5 minutes
+
+def _load_cache():
+    global _WEATHER_CACHE
+    if not _WEATHER_CACHE and os.path.exists(CACHE_FILE):
+        try:
+            with open(CACHE_FILE, "r") as f:
+                _WEATHER_CACHE = json.load(f)
+        except Exception as e:
+            logger.warning(f"Failed to load weather cache from disk: {e}")
+
+def _save_cache():
+    try:
+        with open(CACHE_FILE, "w") as f:
+            json.dump(_WEATHER_CACHE, f)
+    except Exception as e:
+        logger.warning(f"Failed to save weather cache to disk: {e}")
 
 def _get_cache_key(lat: float, lng: float) -> str:
     return f"{lat:.2f},{lng:.2f}"
@@ -33,6 +52,7 @@ async def fetch_rainfall(lat: float, lng: float) -> dict:
     Returns dict with precipitation values, rolling accumulations,
     provider info, and data status (LIVE/CACHED/ERROR).
     """
+    _load_cache()
     cache_key = _get_cache_key(lat, lng)
     now_time = time.time()
     
@@ -115,6 +135,7 @@ async def fetch_rainfall(lat: float, lng: float) -> dict:
         }
         
         _WEATHER_CACHE[cache_key] = (result.copy(), now_time)
+        _save_cache()
         return result
 
     except httpx.TimeoutException:

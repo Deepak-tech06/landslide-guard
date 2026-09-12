@@ -1,0 +1,1 @@
+{"25.58,91.89": [{"latitude": 25.5788, "longitude": 91.8933, "observation_time": "2026-09-12T17:00", "precipitation_1h": 0.1, "precipitation_3h": 0.2, "precipitation_6h": 0.5, "precipitation_24h": 4.5, "precipitation_72h": 11.5, "provider": "Open-Meteo", "status": "LIVE", "request_time": "2026-09-12T17:56:20.282130+00:00", "units": "mm"}, 1789235780.2801023]}
