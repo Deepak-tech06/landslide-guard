@@ -128,14 +128,18 @@ async def fetch_rainfall(lat: float, lng: float) -> dict:
         return _error_result(lat, lng, request_time, "API timeout")
     except httpx.HTTPStatusError as e:
         logger.warning(f"Open-Meteo HTTP error: {e.response.status_code}")
+        
+        # Include full response for debugging
+        debug_info = f"Code: {e.response.status_code}. Body: {e.response.text[:200]}"
+        
         status_text = "RATE_LIMITED/ERROR" if e.response.status_code == 429 else f"HTTP {e.response.status_code}"
         if cache_key in _WEATHER_CACHE:
             cached_data, _ = _WEATHER_CACHE[cache_key]
             res = cached_data.copy()
             res["status"] = "CACHED"
-            res["error"] = status_text
+            res["error"] = debug_info
             return res
-        return _error_result(lat, lng, request_time, status_text)
+        return _error_result(lat, lng, request_time, debug_info)
     except Exception as e:
         logger.error(f"Open-Meteo error: {e}")
         if cache_key in _WEATHER_CACHE:
