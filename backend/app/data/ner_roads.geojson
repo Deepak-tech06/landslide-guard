@@ -1,0 +1,55 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {"name": "NH6 (Jorabat–Shillong)", "road_type": "NH", "state": "Meghalaya", "source": "OSM"},
+      "geometry": {"type": "LineString", "coordinates": [[91.83,26.05],[91.84,25.98],[91.86,25.90],[91.87,25.82],[91.88,25.72],[91.89,25.62],[91.89,25.58]]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"name": "NH44 (Shillong–Cherrapunji)", "road_type": "NH", "state": "Meghalaya", "source": "OSM"},
+      "geometry": {"type": "LineString", "coordinates": [[91.89,25.58],[91.88,25.52],[91.86,25.46],[91.83,25.40],[91.78,25.35],[91.74,25.30],[91.72,25.27]]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"name": "NH40 (Shillong–Dawki)", "road_type": "NH", "state": "Meghalaya", "source": "OSM"},
+      "geometry": {"type": "LineString", "coordinates": [[91.89,25.58],[91.92,25.50],[91.95,25.42],[91.98,25.35],[92.00,25.28],[92.02,25.19]]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"name": "NH10 (Siliguri–Gangtok)", "road_type": "NH", "state": "Sikkim", "source": "OSM"},
+      "geometry": {"type": "LineString", "coordinates": [[88.43,26.71],[88.45,26.82],[88.50,26.95],[88.53,27.05],[88.55,27.15],[88.58,27.25],[88.61,27.34]]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"name": "NH39 (Dimapur–Imphal)", "road_type": "NH", "state": "Nagaland/Manipur", "source": "OSM"},
+      "geometry": {"type": "LineString", "coordinates": [[93.73,25.91],[93.78,25.78],[93.85,25.68],[93.90,25.55],[93.92,25.40],[93.94,25.20],[93.95,25.00],[93.94,24.82]]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"name": "NH53 (Badarpur–Jiribam)", "road_type": "NH", "state": "Assam/Manipur", "source": "OSM"},
+      "geometry": {"type": "LineString", "coordinates": [[92.60,24.87],[92.72,24.85],[92.85,24.82],[92.98,24.80],[93.12,24.79]]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"name": "NH36 (Nowgong–Dimapur)", "road_type": "NH", "state": "Assam/Nagaland", "source": "OSM"},
+      "geometry": {"type": "LineString", "coordinates": [[92.65,26.35],[92.80,26.25],[93.00,26.15],[93.20,26.05],[93.40,25.98],[93.55,25.93],[93.73,25.91]]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"name": "NH54 (Aizawl–Tuipang)", "road_type": "NH", "state": "Mizoram", "source": "OSM"},
+      "geometry": {"type": "LineString", "coordinates": [[92.72,23.73],[92.73,23.55],[92.73,23.35],[92.73,23.15],[92.73,22.89]]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"name": "Tezpur–Bomdila Road", "road_type": "NH", "state": "Arunachal Pradesh", "source": "OSM"},
+      "geometry": {"type": "LineString", "coordinates": [[92.80,26.63],[92.65,26.75],[92.55,26.90],[92.48,27.05],[92.43,27.15],[92.42,27.26]]}
+    },
+    {
+      "type": "Feature",
+      "properties": {"name": "NH15 (Noney–Imphal)", "road_type": "NH", "state": "Manipur", "source": "OSM"},
+      "geometry": {"type": "LineString", "coordinates": [[93.47,25.01],[93.50,24.95],[93.55,24.90],[93.65,24.85],[93.80,24.82],[93.94,24.82]]}
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "version": "v1-demo",
+  "model_type": "RandomForestClassifier",
+  "data_type": "DEMO",
+  "n_samples": 5000,
+  "n_features": 12,
+  "features": [
+    "rainfall_1h",
+    "rainfall_3h",
+    "rainfall_6h",
+    "rainfall_24h",
+    "rainfall_72h",
+    "soil_moisture",
+    "slope",
+    "elevation",
+    "geology_susceptibility",
+    "historical_landslide_density",
+    "distance_to_historical_landslide",
+    "drainage_density"
+  ],
+  "trained_at": "2026-09-12T06:13:31.549829+00:00",
+  "note": "Prototype model trained on synthetic NER data. NOT an operational forecast. Do NOT cite any accuracy metrics from this model as validated performance."
+}

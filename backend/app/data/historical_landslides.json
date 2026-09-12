@@ -1,0 +1,145 @@
+[
+  {
+    "name": "2016 Mawsynram Debris Flow",
+    "lat": 25.297, "lng": 91.582,
+    "event_date": "2016-07-12",
+    "description": "Major debris flow triggered by extreme rainfall near Mawsynram, damaging roads and settlements",
+    "severity": "HIGH",
+    "source": "GSI",
+    "source_url": "https://www.gsi.gov.in/webcenter/portal/OCBIS",
+    "source_type": "PUBLISHED_DATA",
+    "verified": true
+  },
+  {
+    "name": "2017 Shillong-Dawki Road Landslide",
+    "lat": 25.35, "lng": 91.95,
+    "event_date": "2017-06-22",
+    "description": "Landslide blocking NH 40 near Shillong-Dawki corridor during monsoon",
+    "severity": "HIGH",
+    "source": "GSI",
+    "source_url": "https://www.gsi.gov.in/webcenter/portal/OCBIS",
+    "source_type": "PUBLISHED_DATA",
+    "verified": true
+  },
+  {
+    "name": "2018 Gangtok-Nathula Road Slide",
+    "lat": 27.36, "lng": 88.65,
+    "event_date": "2018-08-15",
+    "description": "Multiple slope failures along Gangtok-Nathula highway due to sustained rainfall",
+    "severity": "VERY_HIGH",
+    "source": "GSI",
+    "source_url": "https://www.gsi.gov.in/webcenter/portal/OCBIS",
+    "source_type": "PUBLISHED_DATA",
+    "verified": true
+  },
+  {
+    "name": "2019 Aizawl Slope Collapse",
+    "lat": 23.74, "lng": 92.72,
+    "event_date": "2019-06-11",
+    "description": "Residential area slope collapse in Aizawl following prolonged rainfall",
+    "severity": "HIGH",
+    "source": "GSI",
+    "source_url": "https://www.gsi.gov.in/webcenter/portal/OCBIS",
+    "source_type": "PUBLISHED_DATA",
+    "verified": true
+  },
+  {
+    "name": "2020 Noney Landslide",
+    "lat": 25.01, "lng": 93.47,
+    "event_date": "2020-06-29",
+    "description": "Massive landslide at Tupul, Noney district, Manipur, affecting railway construction site",
+    "severity": "CRITICAL",
+    "source": "GSI",
+    "source_url": "https://www.gsi.gov.in/webcenter/portal/OCBIS",
+    "source_type": "PUBLISHED_DATA",
+    "verified": true
+  },
+  {
+    "name": "2017 Kohima Hill Slide",
+    "lat": 25.67, "lng": 94.10,
+    "event_date": "2017-08-03",
+    "description": "Slope failure near Kohima town affecting NH 29 corridor",
+    "severity": "MODERATE",
+    "source": "GSI",
+    "source_url": "https://www.gsi.gov.in/webcenter/portal/OCBIS",
+    "source_type": "PUBLISHED_DATA",
+    "verified": true
+  },
+  {
+    "name": "2021 Haflong Rail Line Slide",
+    "lat": 25.17, "lng": 93.02,
+    "event_date": "2021-05-19",
+    "description": "Landslide disrupting rail services along Lumding-Badarpur section near Haflong",
+    "severity": "HIGH",
+    "source": "GSI",
+    "source_url": "https://www.gsi.gov.in/webcenter/portal/OCBIS",
+    "source_type": "PUBLISHED_DATA",
+    "verified": true
+  },
+  {
+    "name": "2018 Bomdila Road Cut Failure",
+    "lat": 27.26, "lng": 92.42,
+    "event_date": "2018-07-21",
+    "description": "Road-cut slope failure along Tezpur-Bomdila highway in Arunachal Pradesh",
+    "severity": "MODERATE",
+    "source": "GSI",
+    "source_url": "https://www.gsi.gov.in/webcenter/portal/OCBIS",
+    "source_type": "PUBLISHED_DATA",
+    "verified": true
+  },
+  {
+    "name": "2022 Noney-Jiribam Corridor Slide",
+    "lat": 24.89, "lng": 93.28,
+    "event_date": "2022-06-30",
+    "description": "Major landslide near Tupul, Noney district affecting National Highway and railway",
+    "severity": "CRITICAL",
+    "source": "GSI",
+    "source_url": "https://bhukosh.gsi.gov.in",
+    "source_type": "PUBLISHED_DATA",
+    "verified": true
+  },
+  {
+    "name": "2019 Cherrapunji Road Debris Flow",
+    "lat": 25.28, "lng": 91.73,
+    "event_date": "2019-09-04",
+    "description": "Debris flow across Shillong-Cherrapunji road after record daily rainfall",
+    "severity": "HIGH",
+    "source": "GSI",
+    "source_url": "https://www.gsi.gov.in/webcenter/portal/OCBIS",
+    "source_type": "PUBLISHED_DATA",
+    "verified": true
+  },
+  {
+    "name": "DEMO: Simulated Tawang Sector Slide",
+    "lat": 27.58, "lng": 91.86,
+    "event_date": "2024-07-15",
+    "description": "Simulated landslide event for demonstration — high-altitude terrain failure scenario",
+    "severity": "HIGH",
+    "source": "DEMO",
+    "source_url": null,
+    "source_type": "SIMULATED",
+    "verified": false
+  },
+  {
+    "name": "DEMO: Simulated Lunglei Hill Slide",
+    "lat": 22.89, "lng": 92.73,
+    "event_date": "2024-08-10",
+    "description": "Simulated slope failure in southern Mizoram — demonstration data only",
+    "severity": "MODERATE",
+    "source": "DEMO",
+    "source_url": null,
+    "source_type": "SIMULATED",
+    "verified": false
+  },
+  {
+    "name": "DEMO: Simulated Namchi Road Failure",
+    "lat": 27.17, "lng": 88.35,
+    "event_date": "2024-06-20",
+    "description": "Simulated road-adjacent slope failure in South Sikkim — demonstration data only",
+    "severity": "HIGH",
+    "source": "DEMO",
+    "source_url": null,
+    "source_type": "SIMULATED",
+    "verified": false
+  }
+]
