@@ -26,7 +26,9 @@ async def fetch_rainfall(lat: float, lng: float) -> dict:
     provider info, and data status (LIVE/CACHED/ERROR).
     """
     settings = get_settings()
-    base_url = settings.open_meteo_base_url
+    base_url = settings.open_meteo_base_url.rstrip("/")
+    if base_url.endswith("/v1"):
+        base_url = base_url[:-3]
     url = f"{base_url}/v1/forecast"
     params = {
         "latitude": lat,
