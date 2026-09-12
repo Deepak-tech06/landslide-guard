@@ -18,6 +18,14 @@ logger = logging.getLogger("landslide_guard.weather")
 HOURLY_PARAMS = "precipitation"
 
 
+import time
+
+_WEATHER_CACHE = {}
+CACHE_TTL = 300  # 5 minutes
+
+def _get_cache_key(lat: float, lng: float) -> str:
+    return f"{lat:.2f},{lng:.2f}"
+
 async def fetch_rainfall(lat: float, lng: float) -> dict:
     """
     Fetch current rainfall data from Open-Meteo.
@@ -25,6 +33,16 @@ async def fetch_rainfall(lat: float, lng: float) -> dict:
     Returns dict with precipitation values, rolling accumulations,
     provider info, and data status (LIVE/CACHED/ERROR).
     """
+    cache_key = _get_cache_key(lat, lng)
+    now_time = time.time()
+    
+    if cache_key in _WEATHER_CACHE:
+        cached_data, timestamp = _WEATHER_CACHE[cache_key]
+        if now_time - timestamp < CACHE_TTL:
+            res = cached_data.copy()
+            res["status"] = "CACHED"
+            return res
+
     settings = get_settings()
     base_url = settings.open_meteo_base_url.rstrip("/")
     if base_url.endswith("/v1"):
@@ -53,6 +71,11 @@ async def fetch_rainfall(lat: float, lng: float) -> dict:
         precip = hourly.get("precipitation", [])
 
         if not times or not precip:
+            if cache_key in _WEATHER_CACHE:
+                cached_data, _ = _WEATHER_CACHE[cache_key]
+                res = cached_data.copy()
+                res["status"] = "ERROR (Using stale cache)"
+                return res
             return _error_result(lat, lng, request_time, "Empty response from Open-Meteo")
 
         # Find current hour index (closest to now)
@@ -74,7 +97,7 @@ async def fetch_rainfall(lat: float, lng: float) -> dict:
 
         observation_time = times[current_idx] if current_idx < len(times) else times[-1]
 
-        return {
+        result = {
             "latitude": lat,
             "longitude": lng,
             "observation_time": observation_time,
@@ -88,15 +111,34 @@ async def fetch_rainfall(lat: float, lng: float) -> dict:
             "request_time": request_time.isoformat(),
             "units": "mm",
         }
+        
+        _WEATHER_CACHE[cache_key] = (result.copy(), now_time)
+        return result
 
     except httpx.TimeoutException:
         logger.warning(f"Open-Meteo timeout for ({lat}, {lng})")
+        if cache_key in _WEATHER_CACHE:
+            cached_data, _ = _WEATHER_CACHE[cache_key]
+            res = cached_data.copy()
+            res["status"] = "ERROR (Using stale cache)"
+            return res
         return _error_result(lat, lng, request_time, "API timeout")
     except httpx.HTTPStatusError as e:
         logger.warning(f"Open-Meteo HTTP error: {e.response.status_code}")
-        return _error_result(lat, lng, request_time, f"HTTP {e.response.status_code}")
+        status_text = "RATE_LIMITED/ERROR" if e.response.status_code == 429 else f"HTTP {e.response.status_code}"
+        if cache_key in _WEATHER_CACHE:
+            cached_data, _ = _WEATHER_CACHE[cache_key]
+            res = cached_data.copy()
+            res["status"] = status_text
+            return res
+        return _error_result(lat, lng, request_time, status_text)
     except Exception as e:
         logger.error(f"Open-Meteo error: {e}")
+        if cache_key in _WEATHER_CACHE:
+            cached_data, _ = _WEATHER_CACHE[cache_key]
+            res = cached_data.copy()
+            res["status"] = "ERROR (Using stale cache)"
+            return res
         return _error_result(lat, lng, request_time, str(e))
 
 
