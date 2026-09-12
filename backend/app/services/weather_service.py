@@ -30,6 +30,7 @@ async def fetch_rainfall(lat: float, lng: float) -> dict:
     if base_url.endswith("/v1"):
         base_url = base_url[:-3]
     url = f"{base_url}/v1/forecast"
+    logger.info(f"Weather service requesting Open-Meteo URL: {url}")
     params = {
         "latitude": lat,
         "longitude": lng,
