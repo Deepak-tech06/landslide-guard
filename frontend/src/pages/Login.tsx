@@ -49,7 +49,7 @@ function Wordmark({ small = false }: { small?: boolean }) {
         <ShieldAlert className="lucide-icon text-accent" />
       </div>
       <span className="wordmark-text">
-        LandslideGuard
+        GeoSense
       </span>
     </div>
   );

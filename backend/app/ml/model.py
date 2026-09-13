@@ -1,5 +1,5 @@
 """
-LandslideGuard ML Model — Modular Risk Prediction Interface
+GeoSense ML Model — Modular Risk Prediction Interface
 
 ⚠ DEMONSTRATION MODEL — Trained on synthetic data
 Not an operational forecast. Thresholds require calibration.

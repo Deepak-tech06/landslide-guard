@@ -1,5 +1,5 @@
 """
-LandslideGuard — FastAPI Backend
+GeoSense — FastAPI Backend
 AI-Based Early Warning & Landslide Risk Monitoring System for Northeast India
 
 DEMO MODEL — NOT AN OPERATIONAL FORECAST
@@ -43,16 +43,16 @@ async def lifespan(app: FastAPI):
     except Exception as e:
         logger.warning(f"Supabase not reachable: {e}")
 
-    logger.info("LandslideGuard backend started")
+    logger.info("GeoSense backend started")
     yield
-    logger.info("LandslideGuard backend shutting down")
+    logger.info("GeoSense backend shutting down")
 
 
 def create_app() -> FastAPI:
     settings = get_settings()
 
     app = FastAPI(
-        title="LandslideGuard API",
+        title="GeoSense API",
         description=(
             "AI-Based Early Warning & Landslide Risk Monitoring System for Northeast India. "
             "⚠ DEMONSTRATION MODEL — Not an operational forecast."

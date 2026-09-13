@@ -77,7 +77,7 @@ export default function FieldReports() {
     <div className="app-layout">
       <aside className="sidebar">
         <div className="sidebar-brand">
-          <h1>LandslideGuard</h1>
+          <h1>GEOSENSE</h1>
           <div className="subtitle">AI Early Warning System • NER</div>
         </div>
         <nav className="sidebar-nav">

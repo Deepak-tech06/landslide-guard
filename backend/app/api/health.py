@@ -42,7 +42,7 @@ async def health():
 
     return {
         "status": overall,
-        "service": "LandslideGuard API",
+        "service": "GeoSense API",
         "version": "1.0.0",
         "checks": checks,
         "note": "⚠ DEMONSTRATION SYSTEM — Not an operational forecast service",

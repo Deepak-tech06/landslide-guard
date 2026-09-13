@@ -1,4 +1,4 @@
-"""LandslideGuard Backend Configuration — loaded from environment variables."""
+"""GeoSense Backend Configuration — loaded from environment variables."""
 
 import os
 from pydantic_settings import BaseSettings

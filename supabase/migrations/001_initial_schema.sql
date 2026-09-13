@@ -1,4 +1,4 @@
--- LandslideGuard — Initial Database Schema
+-- GeoSense — Initial Database Schema
 -- PostgreSQL + PostGIS
 -- Run against Supabase SQL Editor or via migration tool
 --

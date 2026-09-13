@@ -1,4 +1,4 @@
--- LandslideGuard — Auth & RBAC Schema
+-- GeoSense — Auth & RBAC Schema
 -- Creates user roles and Demo Authority Account
 
 -- 1. Create User Roles Table

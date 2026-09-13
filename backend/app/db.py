@@ -1,4 +1,4 @@
-"""Supabase client initialization for LandslideGuard."""
+"""Supabase client initialization for GeoSense."""
 
 from supabase import create_client, Client
 from app.config import get_settings
